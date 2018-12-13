@@ -1,0 +1,35 @@
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    color: #909090;
+}
+.title {
+    color: #c4c4c4;
+    font-weight: 400;
+}
+.navbar-brand > .navbar-text {
+    padding: 0px;
+    font-size: .9rem;
+}
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 2px;
+}
+
+.form-withdraw {
+    max-width: 800px;
+}
+
+.amount {
+    background: #fff;
+    color: #111 !important;
+    border-radius: 3px;
+}

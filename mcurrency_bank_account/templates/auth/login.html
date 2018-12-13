@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Multi-currency bank account{% endblock %}
+{% block content %}
+<div class="content mt-2">
+    <form action="/auth/login" class="form" method="POST">
+        <h2 class="text-center">Login</h2>
+        <hr />
+        <div class="form-group">
+            <div class="input-group input-group-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Username</span>
+                </div>
+                <input class="form-control" autofocus placeholder="Type here..." type="text" name="username" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Password</span>
+                </div>
+                <input class="form-control" placeholder="Type here..." type="password" name="password" />
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary mr-auto">Login</button>
+            or you can <a href="{{url_for('auth.register')}}">Register</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

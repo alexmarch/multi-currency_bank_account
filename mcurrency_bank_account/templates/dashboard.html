@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Multi-currency bank account{% endblock %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class="alert alert-info mt-3 mb-3 text-center" role="alert">
+            Welcome to mutli-currency bank account.
+                <a href="/bank/deposit" class="btn btn-sm btn-secondary">Deposit</a>
+
+        </div>
+    {% else %}
+        <div class="alert alert-info mt-3 mb-3 text-center" role="alert">
+            Welcome to mutli-currency bank account.
+            <a href="/auth/login">Login</a> / <a href="/auth/register">Register</a>
+        </div>
+    {% endif %}
+{% endblock %}

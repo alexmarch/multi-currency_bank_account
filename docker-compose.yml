@@ -1,0 +1,40 @@
+version: '3'
+services:
+  webapp:
+    build: .
+    environment:
+      - MYSQL_DATABASE=multi-currency_bank_account
+      - MYSQL_USER=mysql_user
+      - MYSQL_PASSWORD=mysql_password
+      - FLASK_APP=mcurrency_bank_account
+      - FLASK_ENV=development
+      - FLASK_DEBUG=0
+    restart: always
+    volumes:
+      - "./:/opt/mcurrency_bank_account"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=multi-currency_bank_account
+      - MYSQL_USER=mysql_user
+      - MYSQL_PASSWORD=mysql_password
+    ports:
+      - "3306:3306"
+    # volumes:
+    #   - ./db:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    links:
+      - db
+    ports:
+      - 8080:8080
