@@ -12,4 +12,5 @@ docker-compose run --rm webapp python mcurrency_bank_account/manage.py db upgrad
 ---
 ## Tests
 ```bash
+@TODO
 ```
